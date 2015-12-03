@@ -37,7 +37,7 @@ use std::io::Read;
 
 fn main() {
     let mut input = String::new();
-    let mut file = File::open("inputs/day-01.txt");
+    let file = File::open("inputs/day-01.txt");
     match file {
         Ok(mut f) => { f.read_to_string(&mut input).unwrap(); () },
         Err(_) => input = "()())((".to_string(), //end floor = 1, first reached basement at instruction 5.
