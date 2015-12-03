@@ -3,8 +3,9 @@ use std::fs::File;
 use std::io::Read;
 
 fn main() {
-  print_results(day01::solve(&get_input(2, "()())(("))); // 1, 5
+  print_results(day01::solve(&get_input(1, "()())(("))); // 1, 5
   print_results(day02::solve(&get_input(2, "2x3x4"))); // 58, 34
+  print_results(day03::solve(&get_input(3, "^v^v^v^v^v"))); //2, 11
 }
 
 fn get_input(day: usize, or_else: &str) -> String {
