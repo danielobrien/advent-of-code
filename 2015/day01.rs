@@ -35,13 +35,7 @@ use std::io::Read;
     What is the position of the character that causes Santa to first enter the basement?
 */
 
-fn main() {
-    let mut input = String::new();
-    let file = File::open("inputs/day-01.txt");
-    match file {
-        Ok(mut f) => { f.read_to_string(&mut input).unwrap(); () },
-        Err(_) => input = "()())((".to_string(), //end floor = 1, first reached basement at instruction 5.
-    }
+fn solve(input: &String) -> Vec<Result<usize, &str>>{
     let mut floor = 0;
     let mut steps = 0;
     let mut reached_basement = false;
@@ -55,6 +49,5 @@ fn main() {
         };
         if floor == -1 { reached_basement = true; }
     }
-    println!("Part one answer: {}", floor);
-    println!("Part two answer: {}", if reached_basement {steps} else {-1});
+    vec![Ok(floor), if reached_basement {Ok(steps)} else {Err("Did not reach basement") }]
 }
