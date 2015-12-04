@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::Read;
-
 /* --- Day 1: Not Quite Lisp ---
     
     Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
@@ -35,7 +32,7 @@ use std::io::Read;
     What is the position of the character that causes Santa to first enter the basement?
 */
 
-fn solve(input: &String) -> Vec<Result<usize, &str>>{
+pub fn solve(input: &String) -> Vec<Result<isize, &str>>{
     let mut floor = 0;
     let mut steps = 0;
     let mut reached_basement = false;

@@ -1,0 +1,4 @@
+[package]
+name = "advent-of-code"
+version = "1.0.0"
+authors = ["danielobrien <dev@danielobrien.net>"]

@@ -1,7 +1,7 @@
 
 use std::collections::HashSet;
 
-fn solve(input: &String) -> Vec<Result<usize, String>> {
+pub fn solve(input: &String) -> Vec<Result<usize, String>> {
     vec![Ok(deliver(input, false)), Ok(deliver(input, true))]
 }
 

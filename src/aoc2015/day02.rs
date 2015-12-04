@@ -25,7 +25,7 @@ use std::cmp::{min, max};
     How many total feet of ribbon should they order?
 */
 
-fn solve(input: &String) -> Vec<Result<usize, String>> {
+pub fn solve(input: &String) -> Vec<Result<usize, String>> {
     let mut total_wrap_needed = 0;
     let mut total_ribbon_needed = 0;
     for line in input.lines() {
