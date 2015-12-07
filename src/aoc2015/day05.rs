@@ -1,7 +1,7 @@
 use std::fmt;
 use std::fmt::Display;
 
-struct Counts(usize, usize);
+pub struct Counts(usize, usize);
 
 impl Display for Counts {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
@@ -9,7 +9,7 @@ impl Display for Counts {
     }
 }
 
-fn solve(input: &String) -> Vec<Result<Counts, String>> {
+pub fn solve(input: &String) -> Vec<Result<Counts, String>> {
     vec![solve_part_one(input), solve_part_two(input)]
 }
 

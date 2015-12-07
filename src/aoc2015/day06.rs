@@ -7,8 +7,8 @@ enum Op {
     Toggle,
 }
 
-fn solve(input: &String) -> Vec<Result<u32, String>> {
-    use Op::*;
+pub fn solve(input: &String) -> Vec<Result<u32, String>> {
+    use self::Op::*;
     
     let mut lights: [[bool; 1000]; 1000] = [[false; 1000]; 1000];
     for line in input.lines() {
