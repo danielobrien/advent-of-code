@@ -14,6 +14,7 @@ use aoc2015::day08;
 use aoc2015::day09;
 use aoc2015::day10;
 use aoc2015::day11;
+use aoc2015::day12;
 
 mod aoc2015;
 
@@ -48,6 +49,8 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, day10::solve(&get_input(day, "1121"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, day11::solve(&get_input(day, "ghijklmn"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, day12::solve(&get_input(day, "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}"))); }
 
 }
 
