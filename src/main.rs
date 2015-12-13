@@ -13,6 +13,7 @@ use aoc2015::day07;
 use aoc2015::day08;
 use aoc2015::day09;
 use aoc2015::day10;
+use aoc2015::day11;
 
 mod aoc2015;
 
