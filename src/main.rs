@@ -45,6 +45,9 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, day09::solve(&get_input(day, "Dublin to London = 50\nLondon to Dulwich = 20\nDulwich to Dublin = 30"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, day10::solve(&get_input(day, "1121"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, day11::solve(&get_input(day, "ghijklmn"))); }
+
 }
 
 fn get_input(day: usize, or_else: &str) -> String {
