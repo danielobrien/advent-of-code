@@ -28,7 +28,7 @@ Santa's password expired again. What's the next one?
 
 use std::cmp;
 
-fn solve(input: &String) -> Vec<Result<String, String>> {
+pub fn solve(input: &String) -> Vec<Result<String, String>> {
     //println!("{}", input);
     let p1 = get_next_pwd(input.clone());
     let p2 = get_next_pwd(p1.clone());
