@@ -15,6 +15,7 @@ use aoc2015::day09;
 use aoc2015::day10;
 use aoc2015::day11;
 use aoc2015::day12;
+use aoc2015::day13;
 
 mod aoc2015;
 
@@ -51,6 +52,7 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, day11::solve(&get_input(day, "ghijklmn"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, day12::solve(&get_input(day, "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}"))); }
+    day += 1;if v.is_empty() || v.contains(&day) { print_results(day, day13::solve(&get_input(day, "Alice would gain 54 happiness units by sitting next to Bob.\nAlice would lose 79 happiness units by sitting next to Carol.\nAlice would lose 2 happiness units by sitting next to David.\nBob would gain 83 happiness units by sitting next to Alice.\nBob would lose 7 happiness units by sitting next to Carol.\nBob would lose 63 happiness units by sitting next to David.\nCarol would lose 62 happiness units by sitting next to Alice.\nCarol would gain 60 happiness units by sitting next to Bob.\nCarol would gain 55 happiness units by sitting next to David.\nDavid would gain 46 happiness units by sitting next to Alice.\nDavid would lose 7 happiness units by sitting next to Bob.\nDavid would gain 41 happiness units by sitting next to Carol."))); }
 
 }
 
@@ -61,7 +63,6 @@ fn get_input(day: usize, or_else: &str) -> String {
         Ok(mut f) => { f.read_to_string(&mut input).unwrap(); () },
         Err(_) => input = or_else.to_string(),
     }
-  
     println!("Day {}", day);
     input
 }
