@@ -3,19 +3,6 @@ use std::fs::File;
 use std::io::Read;
 use std::env;
 use std::collections::BTreeSet;
-use aoc2015::day01;
-use aoc2015::day02;
-use aoc2015::day03;
-use aoc2015::day04;
-use aoc2015::day05;
-use aoc2015::day06;
-use aoc2015::day07;
-use aoc2015::day08;
-use aoc2015::day09;
-use aoc2015::day10;
-use aoc2015::day11;
-use aoc2015::day12;
-use aoc2015::day13;
 
 mod aoc2015;
 
@@ -29,30 +16,39 @@ fn main() {
         println!("Solving puzzles: {}", iter.fold(head.to_string(), |acc, x| format!("{}, {}", acc, x)));
     }
     let mut day = 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day01::solve(&get_input(day, "()())(("))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day01::solve(&get_input(day, "()())(("))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day02::solve(&get_input(day, "2x3x4"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day02::solve(&get_input(day, "2x3x4"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day03::solve(&get_input(day, "^v^v^v^v^v"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day03::solve(&get_input(day, "^v^v^v^v^v"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day04::solve(&get_input(day, "abcdef"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day04::solve(&get_input(day, "abcdef"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day05::solve(&get_input(day, "aeiouaeiouaeiou"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day05::solve(&get_input(day, "aeiouaeiouaeiou"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day06::solve(&get_input(day, "toggle 0,0 through 999,0"))); } 
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day06::solve(&get_input(day, "toggle 0,0 through 999,0"))); } 
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day07::solve(&get_input(day, "123 -> x\n456 -> b\nx AND b -> d\nx OR b -> e\nx LSHIFT 2 -> f\nb RSHIFT 2 -> g\nNOT x -> h\nNOT b -> a"))); } 
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day07::solve(&get_input(day, "123 -> x\n456 -> b\nx AND b -> d\nx OR b -> e\nx LSHIFT 2 -> f\nb RSHIFT 2 -> g\nNOT x -> h\nNOT b -> a"))); } 
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day08::solve(&get_input(day, ""))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day08::solve(&get_input(day, ""))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day09::solve(&get_input(day, "Dublin to London = 50\nLondon to Dulwich = 20\nDulwich to Dublin = 30"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day09::solve(&get_input(day, "Dublin to London = 50\nLondon to Dulwich = 20\nDulwich to Dublin = 30"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day10::solve(&get_input(day, "1121"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day10::solve(&get_input(day, "1121"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day11::solve(&get_input(day, "ghijklmn"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day11::solve(&get_input(day, "ghijklmn"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, day12::solve(&get_input(day, "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}"))); }
-    day += 1;if v.is_empty() || v.contains(&day) { print_results(day, day13::solve(&get_input(day, "Alice would gain 54 happiness units by sitting next to Bob.\nAlice would lose 79 happiness units by sitting next to Carol.\nAlice would lose 2 happiness units by sitting next to David.\nBob would gain 83 happiness units by sitting next to Alice.\nBob would lose 7 happiness units by sitting next to Carol.\nBob would lose 63 happiness units by sitting next to David.\nCarol would lose 62 happiness units by sitting next to Alice.\nCarol would gain 60 happiness units by sitting next to Bob.\nCarol would gain 55 happiness units by sitting next to David.\nDavid would gain 46 happiness units by sitting next to Alice.\nDavid would lose 7 happiness units by sitting next to Bob.\nDavid would gain 41 happiness units by sitting next to Carol."))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day12::solve(&get_input(day, "{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day13::solve(&get_input(day, "Alice would gain 54 happiness units by sitting next to Bob.\nAlice would lose 79 happiness units by sitting next to Carol.\nAlice would lose 2 happiness units by sitting next to David.\nBob would gain 83 happiness units by sitting next to Alice.\nBob would lose 7 happiness units by sitting next to Carol.\nBob would lose 63 happiness units by sitting next to David.\nCarol would lose 62 happiness units by sitting next to Alice.\nCarol would gain 60 happiness units by sitting next to Bob.\nCarol would gain 55 happiness units by sitting next to David.\nDavid would gain 46 happiness units by sitting next to Alice.\nDavid would lose 7 happiness units by sitting next to Bob.\nDavid would gain 41 happiness units by sitting next to Carol."))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day14::solve(&get_input(day, "Vixen can fly 19 km/s for 7 seconds, but then must rest for 124 seconds.\nRudolph can fly 3 km/s for 15 seconds, but then must rest for 28 seconds."))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day15::solve(&get_input(day, "Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8\nCinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day16::solve(&get_input(day, "1121"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day17::solve(&get_input(day, "1121"))); }
 
 }
 
