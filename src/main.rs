@@ -46,9 +46,9 @@ fn main() {
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day15::solve(&get_input(day, "Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8\nCinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day16::solve(&get_input(day, "1121"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day16::solve(&get_input(day, "Sue 1: goldfish: 9, cars: 0, samoyeds: 9\nSue 2: perfumes: 5, trees: 8, goldfish: 8"))); }
     day += 1;
-    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day17::solve(&get_input(day, "1121"))); }
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day17::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
 
 }
 
