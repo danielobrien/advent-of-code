@@ -1,4 +1,4 @@
-﻿
+
 
 pub fn get_permutations<T: Clone>(v: Vec<T>) -> Vec<Vec<T>> {
     match v.len() {
@@ -7,7 +7,7 @@ pub fn get_permutations<T: Clone>(v: Vec<T>) -> Vec<Vec<T>> {
             let rev0 = v.get(1).unwrap().clone();
             let rev1 = v.get(0).unwrap().clone();
             vec![v, vec![rev0, rev1]]
-        },
+        }
         _ => {
             let mut permutations = vec![];
             for i in 0..v.len() {
@@ -21,7 +21,7 @@ pub fn get_permutations<T: Clone>(v: Vec<T>) -> Vec<Vec<T>> {
                 }
             }
             permutations
-        },
+        }
     }
-    
+
 }
