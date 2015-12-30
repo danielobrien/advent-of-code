@@ -15,6 +15,8 @@ fn main() {
         let head = iter.next().unwrap();
         println!("Solving puzzles: {}", iter.fold(head.to_string(), |acc, x| format!("{}, {}", acc, x)));
     }
+    let unimplemented_msg: Result<usize, &str> = Err("Not yet implemented");
+    let unimpl = vec![unimplemented_msg];
     let mut day = 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day01::solve(&get_input(day, "()())(("))); }
     day += 1;
@@ -57,6 +59,8 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day20::solve(&get_input(day, "34000000"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day21::solve(&get_input(day, "Hit Points: 104\nDamage: 8\nArmor: 1"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, unimpl); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day23::solve(&get_input(day, "inc b\njio b, +2\ntpl b\ninc b"))); }
 
