@@ -51,6 +51,14 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day17::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day18::solve(&get_input(day, ".#.#.#\n...##\n#....#\n..#...\n#.#..#\n####.."))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day19::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day20::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day21::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day23::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
 
 }
 
