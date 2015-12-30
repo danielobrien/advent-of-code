@@ -8,8 +8,23 @@ struct Entity {
     hp: isize,
 }
 
+impl Entity {
+    fn from_str(data: &String) -> Entity {
+        let mut hp = 0;
+        let mut dmg = 0;
+        let mut armour = 0;
+        for line in data.lines() {
+            let value = line.split(" ").last().expect("input line was unexpectedly empty").parse::<isize>().expect("Value for entity characteristic is not a valid isize");
+            if line.contains("Hit Points") { hp = value; }
+            if line.contains("Damage") { dmg = value; }
+            if line.contains("Armor") { armour = value; }
+        }
+        Entity { armour: armour, damage: dmg, hp: hp }
+    }
+}
+
 pub fn solve(input: &String) -> Vec<Result<isize, String>> {
-    let boss = Entity { armour: 1, damage: 8, hp: 104 };
+    let boss = Entity::from_str(input);
     let mut min_gold_to_win = isize::max_value();
     let mut max_gold_to_lose = isize::min_value();
     let mut players = get_possible_players();
