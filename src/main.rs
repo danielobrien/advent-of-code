@@ -65,6 +65,8 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day23::solve(&get_input(day, "inc b\njio b, +2\ntpl b\ninc b"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day24::solve(&get_input(day, "1\n2\n3\n4\n5\n7\n8\n9\n10\n11"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day25::solve(&get_input(day, "To continue, please consult the code grid in the manual.  Enter the code at row 3, column 2."))); }
 
 }
 
