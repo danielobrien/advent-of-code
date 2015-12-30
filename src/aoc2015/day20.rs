@@ -1,20 +1,10 @@
 
 pub fn solve(input: &String) -> Vec<Result<usize, String>> {
-    let target = input.parse::<usize>().unwrap();
+    let target = input.trim().parse::<usize>().expect("Could not parse target as usize");
     vec![Ok(get_house_number_getting_at_least(target)), Ok(p2(target))]
 }
 
 fn get_house_number_getting_at_least(target: usize) -> usize {
-    // let min_house = get_triangular_root(target/10);
-    // println!("starting at {}", min_house);
-    // for h in min_house..(target/10) {
-    //     let mut presents = 0;
-    //     for n in get_factors(h) {
-    //         presents += n;
-    //     }
-    //     presents *= 10;
-    //     if presents >= target { return h }
-    // }
     let max_house = target/10;
     let mut house = Vec::with_capacity(max_house);
     for _ in 0..max_house+1 {
@@ -53,22 +43,4 @@ fn p2(target: usize) -> usize {
         if house[i] >= target { return i; }
     }
     0
-}
-
-fn get_triangular_root(n: usize) -> usize {
-    let f = n as f64;
-    let root = (f64::sqrt(8.0*f + 1.0) - 1.0 ) / 2.0;
-    root.floor() as usize
-}
-
-fn get_factors(n: usize) -> Vec<usize> {
-    let mut factors = vec![1, n];
-    let root = f64::sqrt(n as f64).round() as usize;
-    for x in root..n-1 {
-        if n % x == 0 {
-            factors.push(x);
-            factors.push(n/x);
-        }
-    }
-    factors
 }
