@@ -49,6 +49,8 @@ fn main() {
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day16::solve(&get_input(day, "Sue 1: goldfish: 9, cars: 0, samoyeds: 9\nSue 2: perfumes: 5, trees: 8, goldfish: 8"))); }
     day += 1;
     if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day17::solve(&get_input(day, "20\n10\n15\n5\n5"))); }
+    day += 1;
+    if v.is_empty() || v.contains(&day) { print_results(day, aoc2015::day18::solve(&get_input(day, ".#.#.#\n...##\n#....#\n..#...\n#.#..#\n####.."))); }
 
 }
 
