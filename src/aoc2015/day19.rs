@@ -1,11 +1,15 @@
 use std::collections::{HashMap, HashSet};
 
 pub fn solve(input: &String) -> Vec<Result<usize, String>> {
-    let medicine = "CRnCaCaCaSiRnBPTiMgArSiRnSiRnMgArSiRnCaFArTiTiBSiThFYCaFArCaCaSiThCaPBSiThSiThCaCaPTiRnPBSiThRnFArArCaCaSiThCaSiThSiRnMgArCaPTiBPRnFArSiThCaSiRnFArBCaSiRnCaPRnFArPMgYCaFArCaPTiTiTiBPBSiThCaPTiBPBSiRnFArBPBSiRnCaFArBPRnSiRnFArRnSiRnBFArCaFArCaCaCaSiThSiThCaCaPBPTiTiRnFArCaPTiBSiAlArPBCaCaCaCaCaSiRnMgArCaSiThFArThCaSiThCaSiRnCaFYCaSiRnFYFArFArCaSiRnFYFArCaSiRnBPMgArSiThPRnFArCaSiRnFArTiRnSiRnFYFArCaSiRnBFArCaSiRnTiMgArSiThCaSiThCaFArPRnFArSiRnFArTiTiTiTiBCaCaSiRnCaCaFYFArSiThCaPTiBPTiBCaSiThSiRnMgArCaF";
+    let mut medicine = "";
     let mut replacements = vec![];
     for line in input.lines() {
-        let split = line.split(" => ").collect::<Vec<&str>>();
-        replacements.push((split[0], split[1]));
+        if line.contains(" => ") {
+            let split = line.split(" => ").collect::<Vec<&str>>();
+            replacements.push((split[0], split[1]));
+        } else if !line.is_empty() {
+           medicine = line;
+        }
     }
     let p1 = solve_p1(&replacements, medicine);
     let p2 = solve_p2(&replacements, medicine);
@@ -25,11 +29,9 @@ fn solve_p2(replacements: &Vec<(&str, &str)>, medicine: &str) -> usize {
     'outer: loop {
         for repl in &repls {
             if let Some(r) = rev_repl.get(repl) {
-                println!("{}",current);
                 let inst = current.matches(repl).count();
                 count += inst;
                 current = current.replace(repl, r);
-                println!("Replaced {} occurrences of {} with {} to get {}",inst, repl, r, current);
             }
             if current == "e".to_string() { break 'outer; }
         }
